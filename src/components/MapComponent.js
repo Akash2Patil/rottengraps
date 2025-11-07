@@ -1,26 +1,26 @@
-'use client';
-import { useEffect, useRef, useState } from 'react';
-import 'ol/ol.css';
-import Map from 'ol/Map';
-import View from 'ol/View';
-import TileLayer from 'ol/layer/Tile';
-import VectorLayer from 'ol/layer/Vector';
-import VectorSource from 'ol/source/Vector';
-import OSM from 'ol/source/OSM';
-import XYZ from 'ol/source/XYZ';
-import { fromLonLat } from 'ol/proj';
-import { Style, Fill, Stroke, Circle as CircleStyle } from 'ol/style';
-import { Feature } from 'ol';
-import { Polygon, Point } from 'ol/geom';
-import { defaults as defaultControls } from 'ol/control';
+"use client";
+import { useEffect, useRef, useState } from "react";
+import "ol/ol.css";
+import Map from "ol/Map";
+import View from "ol/View";
+import TileLayer from "ol/layer/Tile";
+import VectorLayer from "ol/layer/Vector";
+import VectorSource from "ol/source/Vector";
+import OSM from "ol/source/OSM";
+import XYZ from "ol/source/XYZ";
+import { fromLonLat } from "ol/proj";
+import { Style, Fill, Stroke, Circle as CircleStyle } from "ol/style";
+import { Feature } from "ol";
+import { Polygon, Point } from "ol/geom";
+import { defaults as defaultControls } from "ol/control";
 
 export default function MapComponent() {
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const baseLayerRef = useRef(null);
 
-  const [baseMap, setBaseMap] = useState('satellite');
-  const [selectedCountry, setSelectedCountry] = useState('Kenya');
+  const [baseMap, setBaseMap] = useState("satellite");
+  const [selectedCountry, setSelectedCountry] = useState("Kenya");
 
   // Country coordinates for centering map
   const countryCenters = {
@@ -37,25 +37,42 @@ export default function MapComponent() {
 
     // Kenya boundary for visual example
     const kenyaBoundary = [
-      [33.9098, 4.6780], [34.0700, 3.0500], [34.4700, 1.8900],
-      [34.9500, 0.0500], [35.8000, -0.5000], [36.9300, -1.3200],
-      [37.7700, -3.0000], [37.9700, -3.4300], [39.2000, -4.6700],
-      [40.9900, -3.9800], [41.8800, -1.5800], [41.5500, 0.0000],
-      [41.9100, 2.9000], [41.2900, 3.9700], [40.9800, 4.2500],
-      [40.0700, 4.1700], [39.8500, 3.8500], [39.5600, 3.4200],
-      [38.8900, 3.5000], [38.1700, 3.6100], [36.8500, 4.4500],
-      [35.9400, 4.6200], [35.2600, 5.4900], [34.9500, 5.4300],
-      [34.0700, 4.2500], [33.9098, 4.6780]
+      [33.9098, 4.678],
+      [34.07, 3.05],
+      [34.47, 1.89],
+      [34.95, 0.05],
+      [35.8, -0.5],
+      [36.93, -1.32],
+      [37.77, -3.0],
+      [37.97, -3.43],
+      [39.2, -4.67],
+      [40.99, -3.98],
+      [41.88, -1.58],
+      [41.55, 0.0],
+      [41.91, 2.9],
+      [41.29, 3.97],
+      [40.98, 4.25],
+      [40.07, 4.17],
+      [39.85, 3.85],
+      [39.56, 3.42],
+      [38.89, 3.5],
+      [38.17, 3.61],
+      [36.85, 4.45],
+      [35.94, 4.62],
+      [35.26, 5.49],
+      [34.95, 5.43],
+      [34.07, 4.25],
+      [33.9098, 4.678],
     ];
 
     const boundaryFeature = new Feature({
-      geometry: new Polygon([kenyaBoundary.map(coord => fromLonLat(coord))]),
+      geometry: new Polygon([kenyaBoundary.map((coord) => fromLonLat(coord))]),
     });
 
     boundaryFeature.setStyle(
       new Style({
-        stroke: new Stroke({ color: '#3b82f6', width: 2 }),
-        fill: new Fill({ color: 'rgba(59, 130, 246, 0.05)' }),
+        stroke: new Stroke({ color: "#3b82f6", width: 2 }),
+        fill: new Fill({ color: "rgba(59, 130, 246, 0.05)" }),
       })
     );
 
@@ -66,8 +83,8 @@ export default function MapComponent() {
     // Base Layer
     baseLayerRef.current = new TileLayer({
       source: new XYZ({
-        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        attributions: '© Esri, Maxar, Earthstar Geographics',
+        url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        attributions: "© Esri, Maxar, Earthstar Geographics",
       }),
     });
 
@@ -100,17 +117,17 @@ export default function MapComponent() {
   useEffect(() => {
     if (!baseLayerRef.current) return;
     let source;
-    if (baseMap === 'osm') {
+    if (baseMap === "osm") {
       source = new OSM();
-    } else if (baseMap === 'terrain') {
+    } else if (baseMap === "terrain") {
       source = new XYZ({
-        url: 'https://tile.opentopomap.org/{z}/{x}/{y}.png',
-        attributions: '© OpenTopoMap, SRTM',
+        url: "https://tile.opentopomap.org/{z}/{x}/{y}.png",
+        attributions: "© OpenTopoMap, SRTM",
       });
     } else {
       source = new XYZ({
-        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        attributions: '© Esri, Maxar, Earthstar Geographics',
+        url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        attributions: "© Esri, Maxar, Earthstar Geographics",
       });
     }
     baseLayerRef.current.setSource(source);
@@ -119,18 +136,15 @@ export default function MapComponent() {
   return (
     <div className="w-full h-full relative">
       {/* Map */}
-      <div
-        ref={mapRef}
-        className="w-full h-screen border border-gray-300 rounded-md"
-      />
+      <div ref={mapRef} className="w-full h-screen border border-gray-300 rounded-md"/>
 
       {/* Controls */}
-      <div className="absolute top-4 left-4 flex gap-3 bg-white/90 backdrop-blur-md p-3 rounded-lg shadow">
+      <div className="absolute top-4 right-5 flex gap-3 bg-white/90 backdrop-blur-md p-3 rounded-lg shadow">
         {/* Country Selector */}
         <select
           value={selectedCountry}
           onChange={(e) => setSelectedCountry(e.target.value)}
-          className="p-2 text-sm rounded border border-gray-300 focus:outline-none bg-white"
+          className="p-2 text-sm text-black rounded border border-gray-300 focus:outline-none bg-white"
         >
           {Object.keys(countryCenters).map((country) => (
             <option key={country} value={country}>
@@ -143,7 +157,7 @@ export default function MapComponent() {
         <select
           value={baseMap}
           onChange={(e) => setBaseMap(e.target.value)}
-          className="p-2 text-sm rounded border border-gray-300 focus:outline-none bg-white"
+          className="p-2 text-sm text-black rounded border border-gray-300 focus:outline-none bg-white"
         >
           <option value="satellite">Satellite</option>
           <option value="osm">OSM</option>
