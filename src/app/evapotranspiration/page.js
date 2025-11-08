@@ -41,7 +41,7 @@ export default function EvapotranspirationPage() {
         theme === "dark" ? "bg-gray-900" : "bg-white"
       } transition-colors`}
     >
-      <div className=" flex flex-col-reverse lg:flex-row">
+      <div className=" flex flex-col lg:flex-row">
         {/* contentsection */}
         <div className={`${isCollapsed ? "hidden" : "w-full lg:w-1/2 block "} content-section pt-2 p-5 lg:p-6 relative`}>
           {/* Header */}
