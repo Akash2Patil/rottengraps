@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🚀 Tech Stack
 
-## Getting Started
+1. **Next.js 16** – React framework for SSR and routing  
+2. **React 19** – Component-based UI library  
+3. **Tailwind CSS 4** – Utility-first styling  
+4. **Lucide React** – Icon library  
+5. **Zustand** – Lightweight state management  
+6. **Recharts** – Data visualization and charts  
+7. **OpenLayers (ol)** – Interactive map rendering 
 
-First, run the development server:
+⚙️ Installation & Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository<br>
+git clone https://github.com/<your-username>/rottengrapes.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate to the project folder<br>
+cd rottengrapes
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Install dependencies<br>
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server<br>
+ npm run dev
 
-## Learn More
+🏗️ Build for Production<br>
+ npm run build<br>
+ npm start<br>
 
-To learn more about Next.js, take a look at the following resources:
+🧠 Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Dark/Light mode toggle
+2. Interactive environmental map using OpenLayers
+3. Dynamic data visualization using Recharts
+4. Modular and scalable folder structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Responsive UI with Tailwind CSS
 
-## Deploy on Vercel
+📦 Dependencies Overview
+| Package              | Purpose              |
+| -------------------- | -------------------- |
+| `next`               | React framework      |
+| `react`, `react-dom` | Core React libraries |
+| `lucide-react`       | Icon set             |
+| `tailwindcss`        | Styling              |
+| `zustand`            | State management     |
+| `recharts`           | Charting             |
+| `ol`                 | Mapping library      |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✨ Development Commands
+| Command         | Description           |
+| --------------- | --------------------- |
+| `npm run dev`   | Start dev server      |
+| `npm run build` | Build production app  |
+| `npm start`     | Run production server |
+| `npm run lint`  | Run linter            |
