@@ -134,7 +134,7 @@ export default function MapComponent() {
   }, [baseMap]);
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full relative">
       {/* Map */}
       <div ref={mapRef} className="w-full h-screen border border-gray-300 rounded-md"/>
 
@@ -159,9 +159,9 @@ export default function MapComponent() {
           onChange={(e) => setBaseMap(e.target.value)}
           className="p-2 text-sm text-black rounded border border-gray-300 focus:outline-none bg-white"
         >
-          <option value="satellite">Satellite</option>
-          <option value="osm">OSM</option>
-          <option value="terrain">Terrain</option>
+          <option value="satellite">Base Map</option>
+          <option value="osm">Raster Map</option>
+          <option value="terrain">Vector Data Layer</option>
         </select>
       </div>
     </div>

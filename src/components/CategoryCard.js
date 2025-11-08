@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function CategoryCard({ title, subtitle, value, icon, theme, link }) {
   return (
-    <div className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} rounded-sm lg:w-[330px] shadow-md p-5 transition-all hover:shadow-xl border ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}`}>
+    <div className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} rounded-sm lg:w-[330px] shadow-md p-2 sm:p-5 transition-all hover:shadow-xl border ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}`}>
 
       <div className="flex flex-col items-start justify-between">
         <Link href={link} className="hover:bg-gray-200 p-2 flex justify-center item-center w-fit ml-auto">
@@ -13,7 +13,7 @@ export default function CategoryCard({ title, subtitle, value, icon, theme, link
           <div className={`p-3 rounded-lg`}>
           {icon}
         </div>
-          <h3 className={`text-xl font-semibold h-[70px] ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+          <h3 className={`text-lg sm:text-xl font-semibold h-[70px] ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             {title}
           </h3>
           <div className='w-[90%] h-[0.5px] bg-zinc-300'></div>

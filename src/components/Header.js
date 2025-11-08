@@ -7,13 +7,13 @@ export default function Header() {
 
   return (
     <header className={`${theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-[#FCFCFD] border-gray-200'} border-b sticky top-0 z-50`}>
-      <div className="mx-auto px-4 sm:px-5 lg:px-5 py-4 flex items-center justify-between">
+      <div className="mx-auto px-2 sm:px-5 lg:px-5 py-2 flex items-center justify-between">
 
-        <div className='flex gap-5'>
+        <div className='flex gap-2 lg:gap-5'>
           <img src='/logo.svg'/>
           <img src='/logo1.svg' />
         </div>
-        <div className='flex gap-3'>
+        <div className='flex gap-1 lg:gap-3'>
           <img className='cursor-pointer hover:bg-gray-200 p-2 rounded-lg' src='/icons/download.svg'/>
           <img className='cursor-pointer hover:bg-gray-200 p-2 rounded-lg' src='/icons/book.svg'/>
           <button
