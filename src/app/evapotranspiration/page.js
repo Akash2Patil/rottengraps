@@ -200,12 +200,12 @@ export default function EvapotranspirationPage() {
             theme === "dark" ? "bg-gray-800" : "bg-white"
           } ${ isCollapsed ? "w-[100%] h-screen": "w-full lg:w-1/2 h-full"} relative`}
         >
-          <button className="hidden lg:block w-[25px] h-[50px] bg-white absolute left-[-5] rounded z-50 top-1/3 flex justify-center items-center cursor-pointer" onClick={()=>{
+          <button className={`hidden lg:block w-[25px] h-[50px] bg-white absolute left-[-5] rounded z-50 top-1/3 flex justify-center items-center cursor-pointer ${theme === "dark" ? "bg-gray-500" : undefined}`} onClick={()=>{
               setIsCollapsed(!isCollapsed)
           }}>
             <ChevronLeft className={`text-black transition-transform duration-300 ${
                 isCollapsed ? "rotate-180" : ""
-              } ${theme === "dark" ? "bg-gray-500" : undefined} `}/>
+              }  `}/>
           </button>
           <MapComponent
             theme={theme}
