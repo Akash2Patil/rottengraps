@@ -6,7 +6,7 @@ import SideBar from '@/components/SideBar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Kenya Environmental Dashboard',
+  title: 'Rottengrapes task',
   description: 'Environmental indicators and statistics for Kenya',
 };
 
