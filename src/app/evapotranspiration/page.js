@@ -205,7 +205,7 @@ export default function EvapotranspirationPage() {
           }}>
             <ChevronLeft className={`text-black transition-transform duration-300 ${
                 isCollapsed ? "rotate-180" : ""
-              }`}/>
+              } ${theme === "dark" ? "bg-gray-500" : undefined} `}/>
           </button>
           <MapComponent
             theme={theme}
